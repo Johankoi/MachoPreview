@@ -3,7 +3,7 @@
 ### ipa预览：
 iOS开发中经常会打包生成ipa，提交QA或者提审AppStore。有的时候会有需求想知道ipa包的一些信息，包名，icon，最低支持版本等等。尤其是一个app使用不同证书打出不同的ipa的时候，想要查查某个ipa对应什么证书以及描述文件。那么这个插件可以很好的提供帮助，如下图：
 
-![ipa预览](https://raw.github.com/hanxiaoqing19910916/PreviewHelper/master/Screenshots/preview_ipa.png)
+![ipa预览](https://raw.github.com/HanProjectCoder/PreviewHelper/master/Screenshots/preview_ipa.png)
 
 点选ipa文件，按一下空格就能弹出这个预览窗口：上面展示了app的一些信息，还能获取描述文件创建以及过期时间，方便查看是否快要过期，能及时替换。
 
@@ -18,11 +18,11 @@ iOS开发中经常会打包生成ipa，提交QA或者提审AppStore。有的时�
 ### mobileProvision描述文件预览：
 我们从开发者后台生成的描述文件，下载到电脑上后，双击安装后，其实拷贝到了~/Library/MobileDevice/Provisioning Profiles目录下：
 
-![描述文件安装目录](https://raw.github.com/hanxiaoqing19910916/PreviewHelper/master/Screenshots/profiles.png)
+![描述文件安装目录](https://raw.github.com/HanProjectCoder/PreviewHelper/master/Screenshots/profiles.png)
 
 Xcode也是从这个目录读取描述文件，用于让开发者进行选择。可以看到这个文件名是hash过的。这个插件也可以对这个描述文件进行预览：
 
-![描述文件预览](https://raw.github.com/hanxiaoqing19910916/PreviewHelper/master/Screenshots/preview_mobileprovision.png)
+![描述文件预览](https://raw.github.com/HanProjectCoder/PreviewHelper/master/Screenshots/preview_mobileprovision.png)
 
 
 
@@ -32,7 +32,7 @@ Xcode也是从这个目录读取描述文件，用于让开发者进行选择。
 
 二.使用release版本的shell部署方式：
 1.从github仓库release里面下载installPreviewPlugin.zip:
-![安装](https://raw.github.com/hanxiaoqing19910916/PreviewHelper/master/Screenshots/install.png)
+![安装](https://raw.github.com/HanProjectCoder/PreviewHelper/master/Screenshots/install.png)
 2.解压后cd进入installPreviewPlugin目录后，依次执行下面的命令：
 ```
 chmod +x install.sh 
