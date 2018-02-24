@@ -174,4 +174,8 @@
     return _provisionDict[@"AppIDName"];
 }
 
+- (NSString *)application_identifier
+{
+   return self.entitlementsDict[@"application-identifier"];
+}
 @end

@@ -27,4 +27,6 @@
 @property (nonatomic, strong, readonly) NSDictionary *entitlementsDict;
 @property (nonatomic, strong, readonly) NSArray *developerCers;
 
+@property (nonatomic, copy, readonly) NSString *application_identifier;
+
 @end
