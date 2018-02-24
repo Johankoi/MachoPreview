@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A52A2372041523000E08AFD /* install.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8A52A2362041523000E08AFD /* install.sh */; };
 		8A5E342D2004992A000D9C2E /* AppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5E34272004992A000D9C2E /* AppInfo.h */; };
 		8A5E342E2004992A000D9C2E /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5E34282004992A000D9C2E /* AppInfo.m */; };
 		8A5E342F2004992A000D9C2E /* ProvisionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5E34292004992A000D9C2E /* ProvisionInfo.h */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A52A2362041523000E08AFD /* install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 		8A5E34272004992A000D9C2E /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
 		8A5E34282004992A000D9C2E /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		8A5E34292004992A000D9C2E /* ProvisionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvisionInfo.h; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A52A2352041523000E08AFD /* installScript */ = {
+			isa = PBXGroup;
+			children = (
+				8A52A2362041523000E08AFD /* install.sh */,
+			);
+			path = installScript;
+			sourceTree = "<group>";
+		};
 		8A5E34232004992A000D9C2E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		8AF39B501FFE11BC006B4A3C /* PreviewHelper */ = {
 			isa = PBXGroup;
 			children = (
+				8A52A2352041523000E08AFD /* installScript */,
 				8A5E34232004992A000D9C2E /* Categories */,
 				8A5E34262004992A000D9C2E /* InfoFactory */,
 				8AF39B511FFE11BC006B4A3C /* GenerateThumbnailForURL.m */,
@@ -192,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A52A2372041523000E08AFD /* install.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
