@@ -178,4 +178,11 @@
 {
    return self.entitlementsDict[@"application-identifier"];
 }
+
+- (NSString *)aps_environment
+{
+    return self.entitlementsDict[@"aps-environment"];
+}
+
+
 @end

@@ -29,4 +29,6 @@
 
 @property (nonatomic, copy, readonly) NSString *application_identifier;
 
+@property (nonatomic, copy, readonly) NSString *aps_environment;
+
 @end

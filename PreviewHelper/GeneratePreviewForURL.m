@@ -82,7 +82,8 @@ void drawProvisionInfo(ProvisionInfo *profileInfo, CGFloat currBottom)
     NSString *team = [NSString stringWithFormat:@"Team: %@  (%@)",profileInfo.teamName,profileInfo.teamIds];
     NSString *developerCer = [NSString stringWithFormat:@"DeveloperCer: %@",profileInfo.developerCers.firstObject];
     NSString *application_identifier = [NSString stringWithFormat:@"Application_identifier: %@",profileInfo.application_identifier];
-    NSArray *provisionInfoValues = @[name,type,creationDate,expirationDate,team,developerCer,application_identifier];
+    NSString *aps_environment = [NSString stringWithFormat:@"Aps-environment: %@",profileInfo.aps_environment];
+    NSArray *provisionInfoValues = @[name,type,creationDate,expirationDate,team,developerCer,application_identifier,aps_environment];
     
     for (NSInteger i = 0; i < provisionInfoValues.count; i++) {
         NSString *displayValue = provisionInfoValues[i];
