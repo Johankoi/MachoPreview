@@ -74,7 +74,7 @@ void drawProvisionInfo(ProvisionInfo *profileInfo, CGFloat currBottom)
     NSFont *normalFont = [NSFont fontWithName:@"HelveticaNeue-Thin" size:10];
     NSColor *titleColor = [NSColor blackColor];
     currBottom = [@"Provisioning" drawWithFont:[NSFont fontWithName:@"HelveticaNeue-Bold" size:13]
-                                         color:titleColor inOrigin: CGPointMake(leftMargin, currBottom + 15)];
+                                         color:titleColor inOrigin: CGPointMake(leftMargin, currBottom)];
     NSString *name = [NSString stringWithFormat:@"Profile Name: %@",profileInfo.name];
     NSString *type = [NSString stringWithFormat:@"Profile Type: %@",profileInfo.type];
     NSString *creationDate = [NSString stringWithFormat:@"CreationDate: %@",profileInfo.creationDate];
@@ -103,16 +103,31 @@ void drawProvisionInfo(ProvisionInfo *profileInfo, CGFloat currBottom)
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
 {
+
+    NSString *typeUTI = (__bridge NSString *)contentTypeUTI;
+    NSURL *targetFileUrl = (__bridge NSURL *)url;
+    
     // prepare the drawing context
     CGSize contextSize = CGSizeMake(500, 300);
+    if ([typeUTI isEqualToString:kDataType_ios_provision]) {
+        contextSize =  CGSizeMake(500, 190);
+    }
+    
+    if ([typeUTI isEqualToString:kDataType_ipa]) {
+        contextSize =  CGSizeMake(500, 300);
+    }
+    
+    if ([typeUTI isEqualToString:kDataType_app]) {
+        contextSize =  CGSizeMake(300, 140);
+    }
+    
     CGContextRef context = QLPreviewRequestCreateContext(preview, contextSize, NO, NULL);
     CGContextTranslateCTM(context, 0, contextSize.height);
     CGContextScaleCTM(context, 1.0f, -1.0f);
     NSGraphicsContext *nsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:(void *)context flipped:YES];
     [NSGraphicsContext setCurrentContext:nsContext];
     
-    NSString *typeUTI = (__bridge NSString *)contentTypeUTI;
-    NSURL *targetFileUrl = (__bridge NSURL *)url;
+
     
     // targetFile is  provision file
     if ([typeUTI isEqualToString:kDataType_ios_provision]) {
@@ -135,7 +150,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         NSColor *normalColor = [NSColor blackColor];
         
         // begin drawing App info to preview
-        CGFloat currBottom = [@"App info" drawWithFont:sectionFont color:weightColor inOrigin: CGPointMake(sectionTitleMargin, 10)];
+        CGFloat currBottom = [@"App info" drawWithFont:sectionFont color:weightColor inOrigin: CGPointMake(sectionTitleMargin, 0)];
         
         //  draw appIcon to preview
         NSImage *appIconImg = iconImageWith(targetFileUrl, typeUTI, appInfo.appIconName);
