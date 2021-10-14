@@ -8,8 +8,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IPADetailViewController" customModule="DragPreview" customModuleProvider="target">
             <connections>
+                <outlet property="bundleIdLabel" destination="hgS-Cu-fGs" id="x0P-ft-xaV"/>
+                <outlet property="displayNameLabel" destination="rNG-0U-QyU" id="Ps7-lX-ztL"/>
                 <outlet property="headerView" destination="8f5-Ib-ex3" id="vIl-dk-x3r"/>
                 <outlet property="iconImageView" destination="Kti-vi-ued" id="85l-oS-lNd"/>
+                <outlet property="versonLabel" destination="wqH-F1-Jca" id="3Wz-qH-2Sw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -22,14 +25,49 @@
                 <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8f5-Ib-ex3">
                     <rect key="frame" x="0.0" y="354" width="336" height="171"/>
                     <subviews>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kti-vi-ued">
-                            <rect key="frame" x="254" y="84" width="48" height="48"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kti-vi-ued">
+                            <rect key="frame" x="251" y="81" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="Toy-db-QLh"/>
+                                <constraint firstAttribute="width" constant="60" id="f2h-e5-Rwm"/>
+                            </constraints>
                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="G7y-AR-4m1"/>
                         </imageView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rNG-0U-QyU">
+                            <rect key="frame" x="18" y="111" width="154" height="20"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="BundleDispayName" id="C6u-8G-vUB">
+                                <font key="font" metaFont="system" size="17"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wqH-F1-Jca">
+                            <rect key="frame" x="18" y="84" width="52" height="17"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="verson:" id="tkf-0J-B6r">
+                                <font key="font" metaFont="system" size="14"/>
+                                <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hgS-Cu-fGs">
+                            <rect key="frame" x="18" y="57" width="106" height="17"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="bundleIdentifier" id="gEt-ra-ulw">
+                                <font key="font" metaFont="system" size="14"/>
+                                <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="171" id="4gZ-x2-T7w"/>
+                        <constraint firstItem="wqH-F1-Jca" firstAttribute="leading" secondItem="rNG-0U-QyU" secondAttribute="leading" id="8kb-uE-zGz"/>
+                        <constraint firstItem="Kti-vi-ued" firstAttribute="top" secondItem="8f5-Ib-ex3" secondAttribute="top" constant="30" id="QZi-q1-rX2"/>
+                        <constraint firstAttribute="trailing" secondItem="Kti-vi-ued" secondAttribute="trailing" constant="25" id="SBt-9I-mYR"/>
+                        <constraint firstItem="hgS-Cu-fGs" firstAttribute="top" secondItem="wqH-F1-Jca" secondAttribute="bottom" constant="10" id="a2D-dX-NtH"/>
+                        <constraint firstItem="hgS-Cu-fGs" firstAttribute="leading" secondItem="rNG-0U-QyU" secondAttribute="leading" id="aIQ-HX-0as"/>
+                        <constraint firstItem="rNG-0U-QyU" firstAttribute="leading" secondItem="8f5-Ib-ex3" secondAttribute="leading" constant="20" id="c2T-Xl-Ymo"/>
+                        <constraint firstItem="rNG-0U-QyU" firstAttribute="top" secondItem="8f5-Ib-ex3" secondAttribute="top" constant="40" id="dMi-r2-yrT"/>
+                        <constraint firstItem="wqH-F1-Jca" firstAttribute="top" secondItem="rNG-0U-QyU" secondAttribute="bottom" constant="10" id="hql-cz-IWq"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="layer.backgroundColor">
@@ -44,7 +82,7 @@
                 <constraint firstItem="8f5-Ib-ex3" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="FeK-Zt-ps1"/>
                 <constraint firstItem="8f5-Ib-ex3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="oU9-9p-q07"/>
             </constraints>
-            <point key="canvasLocation" x="-261" y="-218"/>
+            <point key="canvasLocation" x="-253" y="-485"/>
         </customView>
     </objects>
 </document>

@@ -13,6 +13,7 @@ public enum PropertyListDictionaryValue: Hashable, Codable, Equatable {
     case string(String)
     case bool(Bool)
     case array([PropertyListDictionaryValue])
+    case dictionary([String:PropertyListDictionaryValue])
     case unknown
     
     public init(from decoder: Decoder) throws {
@@ -24,6 +25,8 @@ public enum PropertyListDictionaryValue: Hashable, Codable, Equatable {
             self = .bool(bool)
         } else if let array = try? container.decode([PropertyListDictionaryValue].self) {
             self = .array(array)
+        } else if let dictionary = try? container.decode([String:PropertyListDictionaryValue].self) {
+            self = .dictionary(dictionary)
         } else {
             self = .unknown
         }
@@ -39,6 +42,8 @@ public enum PropertyListDictionaryValue: Hashable, Codable, Equatable {
             try container.encode(bool)
         case .array(let array):
             try container.encode(array)
+        case .dictionary(let dictionary):
+            try container.encode(dictionary)
         case .unknown:
             break
         }
